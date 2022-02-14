@@ -1,5 +1,4 @@
  import IOSPicker from './picker';
- import Menu from './menu';
  import React, {Component, useState, useEffect} from 'react';
  import {Platform, StyleSheet,Dimensions, Text,Button, View, Alert,Image} from 'react-native';
  import NativeCamera from './NativeCameraModule/NativeCameraModule'
