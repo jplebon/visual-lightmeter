@@ -10,7 +10,51 @@ export default function IOSPicker (){
 
 <View style={styles.scrollviewGeneral}>
 
-<View style={styles.scrollviewISO} >
+    <View>
+        <View style={styles.icons}>
+        <TouchableOpacity >
+                  <ImageBackground source={require("./ISO.png")} style={styles.ISOUp}>
+                  </ImageBackground>
+        </TouchableOpacity>
+
+        <TouchableOpacity> 
+          <ImageBackground source={require("./apertureBlurry.png")} style={styles.apertureUp} >
+          </ImageBackground>  
+
+
+        </TouchableOpacity>
+       
+        
+        
+
+        <TouchableOpacity >
+            <ImageBackground source={require("./shutterBlurry.png")} style={styles.shutterSpeedUp}>
+            </ImageBackground>
+        </TouchableOpacity>
+
+        </View>
+
+        <View style={styles.icons}>
+
+          <TouchableOpacity >
+              <ImageBackground source={require("./apertureFocus.png")} style={styles.apertureDown}>
+              </ImageBackground> 
+          </TouchableOpacity>
+
+         
+
+          <TouchableOpacity >
+              <ImageBackground source={require("./shutterFocus.png")} style={styles.shutterSpeedDown}>
+              </ImageBackground>
+          </TouchableOpacity>
+
+        
+        
+        
+        </View>
+    </View> 
+
+  <View style={styles.scrollviewISO} >
     <Picker>
 
       <Picker.Item label='3200' value={3200} color='white' />
@@ -88,21 +132,21 @@ const styles = StyleSheet.create({
       },
     
       scrollviewAperture:{
-        top: screen.height/1.7,
-        left: screen.width*0.11,
-        width:100,
+        top: screen.height/1.52,
+        right: 109,
+        width:130,
       },
     
       scrollviewISO:{
-        top: screen.height/1.7,
-        left: 38,
-        width:113,
+        top: screen.height/1.52,
+        right: 110,
+        width:132,
       },
     
       scrollviewShutter:{
-        top: screen.height/1.7,
-        left: 30,
-        width:150,
+        top: screen.height/1.52,
+        right: 108,
+        width:130,
       },
     
     
@@ -122,13 +166,16 @@ const styles = StyleSheet.create({
         textShadowRadius: 5,
         top: screen.height/5
       },
-    
+      
+      icons: {
+        flexDirection: 'row'
+      },
      
       ISOUp: {
         width: 40,
         height: 40,
         top: screen.height/1.59,
-        left: screen.width/5.2 //40 to account for horizontal padding
+        left: screen.width/6.8 //40 to account for horizontal padding
     
       },
     
@@ -165,7 +212,7 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40,
         top: screen.height/1.59,
-        left: screen.width/1.92
+        left: screen.width/1.74
     
       },
     
@@ -174,10 +221,12 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40,
         top: screen.height/1.15,
-        left: screen.width/1.6
+        left: screen.width/1.5
     
     
       },
+
+      
     
 
 
