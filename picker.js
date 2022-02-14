@@ -1,10 +1,15 @@
 import {Picker} from '@react-native-picker/picker';
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, Text, View, Button, ImageBackground, TouchableOpacity, useWindowDimensions, Dimensions} from 'react-native';
 
 
 const screen = Dimensions.get("screen");
 export default function IOSPicker (){
+    
+    const [apertureValue, setApertureValue] = useState(8); 
+    const [ISOValue, setISOValue] = useState(400);
+    const [shutterValue, setShutterValue] = useState(1/250);
+    
     return (
         
 
@@ -13,22 +18,20 @@ export default function IOSPicker (){
     <View>
         <View style={styles.icons}>
         <TouchableOpacity >
-                  <ImageBackground source={require("./ISO.png")} style={styles.ISOUp}>
-                  </ImageBackground>
+            <ImageBackground source={require("./ios/assets/ISO.png")} style={styles.ISOUp}>
+            </ImageBackground>
         </TouchableOpacity>
 
         <TouchableOpacity> 
-          <ImageBackground source={require("./apertureBlurry.png")} style={styles.apertureUp} >
-          </ImageBackground>  
-
-
+            <ImageBackground source={require("./ios/assets/apertureBlurry.png")} style={styles.apertureUp} >
+            </ImageBackground>  
         </TouchableOpacity>
-       
-        
+   
+   
         
 
         <TouchableOpacity >
-            <ImageBackground source={require("./shutterBlurry.png")} style={styles.shutterSpeedUp}>
+            <ImageBackground source={require("./ios/assets/shutterBlurry.png")} style={styles.shutterSpeedUp}>
             </ImageBackground>
         </TouchableOpacity>
 
@@ -37,14 +40,14 @@ export default function IOSPicker (){
         <View style={styles.icons}>
 
           <TouchableOpacity >
-              <ImageBackground source={require("./apertureFocus.png")} style={styles.apertureDown}>
+              <ImageBackground source={require("./ios/assets/apertureFocus.png")} style={styles.apertureDown}>
               </ImageBackground> 
           </TouchableOpacity>
 
          
 
           <TouchableOpacity >
-              <ImageBackground source={require("./shutterFocus.png")} style={styles.shutterSpeedDown}>
+              <ImageBackground source={require("./ios/assets/shutterFocus.png")} style={styles.shutterSpeedDown}>
               </ImageBackground>
           </TouchableOpacity>
 
@@ -55,7 +58,15 @@ export default function IOSPicker (){
     </View> 
 
   <View style={styles.scrollviewISO} >
-    <Picker>
+    <Picker
+        selectedValue={ISOValue}
+        onValueChange={(itemValue, itemIndex) => {
+            setISOValue(itemValue);
+            this.camera._onISOChange(itemValue)
+            }
+        }
+    
+    >
 
       <Picker.Item label='3200' value={3200} color='white' />
       <Picker.Item label='1600' value={1600} color='white' />
@@ -70,7 +81,15 @@ export default function IOSPicker (){
 
 
   <View style={styles.scrollviewAperture} >
-    <Picker>
+    <Picker
+    selectedValue={apertureValue}
+    onValueChange={(itemValue, itemIndex) => {
+        setApertureValue(itemValue);
+        //modify ISO to simulate aperture modification, which iPhone lenses
+        //simply aren't capable of
+        this.camera._onISOChange(itemValue)
+        }
+    }>
 
       <Picker.Item label='1' value={1} color='white' />
       <Picker.Item label='1.4' value={1.4} color='white' />
@@ -93,7 +112,13 @@ export default function IOSPicker (){
   
 
   <View style={styles.scrollviewShutter} >
-    <Picker>
+    <Picker
+    selectedValue={shutterValue}
+    onValueChange={(itemValue, itemIndex) => {
+        setShutterValue(itemValue);
+        this.camera._onShutterChange(itemValue)
+        }
+    }>
 
       <Picker.Item label='500s' value={500} color='white' />
       <Picker.Item label='250s' value={250} color='white' />
@@ -132,19 +157,19 @@ const styles = StyleSheet.create({
       },
     
       scrollviewAperture:{
-        top: screen.height/1.52,
+        top: screen.height/1.46,
         right: 109,
         width:130,
       },
     
       scrollviewISO:{
-        top: screen.height/1.52,
+        top: screen.height/1.46,
         right: 110,
         width:132,
       },
     
       scrollviewShutter:{
-        top: screen.height/1.52,
+        top: screen.height/1.46,
         right: 108,
         width:130,
       },
@@ -175,16 +200,7 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40,
         top: screen.height/1.59,
-        left: screen.width/6.8 //40 to account for horizontal padding
-    
-      },
-    
-      ISODown: {
-        alignSelf: "center",
-        width: 40,
-        height: 40,
-        top: screen.height/1.15,
-        left: screen.width/2-20 - 40 //40 to account for horizontal padding
+        left: screen.width/6.8 
     
       },
     
@@ -202,7 +218,7 @@ const styles = StyleSheet.create({
         flex: 1,
         width: 40,
         height: 40,
-        top: screen.height/1.15,
+        top: screen.height/1.12,
         left: screen.width/2-18
     
       },
@@ -220,9 +236,8 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         width: 40,
         height: 40,
-        top: screen.height/1.15,
-        left: screen.width/1.5
-    
+        top: screen.height/1.12,
+        left: screen.width/1.48
     
       },
 
