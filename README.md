@@ -9,10 +9,10 @@
 
 ## Table of contents
 
-- [1. Background](#1-motivation)
+- [1. Background](#1-background---motivation)
 - [2. Front and Backend](#2-front-and-backend)
 - [3. Hardware instructions and Concurrency](#3-hardware-instructions-and-concurrency)
-- [4. What's Next](#4-what's-next)
+- [4. What's Next](#4-whats-next)
 
 
 
