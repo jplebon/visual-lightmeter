@@ -1,3 +1,6 @@
+ //Any absolute value written in the stylesheet is a placeholder, meant to be replaced in the near future
+
+
  import IOSPicker from './picker';
  import React, {Component, useState, useEffect} from 'react';
  import {Platform, StyleSheet,Dimensions, Text,Button, View, Alert,Image} from 'react-native';
