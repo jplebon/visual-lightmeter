@@ -17,6 +17,8 @@
 - [4. What's Next](#4-whats-next)
 
 
+![](https://github.com/jpl98/camapp/blob/main/visual-lm.png)
+
 
 # 1. Background - Motivation
 
