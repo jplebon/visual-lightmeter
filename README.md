@@ -11,8 +11,8 @@
 
 - [1. Background](#1-background---motivation)
 - [2. Front and Backend](#2-front-and-backend)
-- - [2.1 The Visual Side](#21-the-visual-side)
-  - [2.2 The Technical Side](#22-the-technical-side)
+- - [2.1 The Visual Side](#21---the-visual-side)
+  - [2.2 The Technical Side](#22---the-technical-side)
 - [3. Hardware instructions and Concurrency](#3-hardware-instructions-and-concurrency)
 - [4. What's Next](#4-whats-next)
 
