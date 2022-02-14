@@ -10,6 +10,26 @@ export default class NativeCameraModule extends React.Component {
         super(props)
     }
 
+    _onISOChange = (value) => {
+        if(this.camera){
+            UIManager.dispatchViewManagerCommand(
+                findNodeHandle(this.camera),
+                UIManager["CameraModule"].Commands.onISOChange(value),
+                []
+            );
+        }
+    }
+
+    _onShutterChange = (value) => {
+        if(this.camera){
+            UIManager.dispatchViewManagerCommand(
+                findNodeHandle(this.camera),
+                UIManager["CameraModule"].Commands.onShutterChange(value),
+                []
+            );
+        }
+    }
+
     render() {
         return <CameraView
             ref={e => { this.camera = e }}
