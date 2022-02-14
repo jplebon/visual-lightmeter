@@ -30,7 +30,7 @@ Visual Lightmeter is an app designed to provide a virtual lightmeter for photogr
 
 The app, in its current state, features a purposefully minimal interface. Three wheels on the bottom half of the screen allow the user to manually control all three exposure settings available in any film camera, and the camera feed on the top half of the screen displays the effects of these changes. 
 
-To further assist potential newcomers to the film photography world, the shutter speed and aperture dials feature two icons, one on top and one below, which illustrate the effects that modifying those wheels one way or the other have on the final photo. The ISO dial doesn't feature these informational icons, as film photographers don't change ISOs between shots; the choice of roll locks you in to a particular ISO for the duration of the roll.
+To further assist potential newcomers to the film photography world, the shutter speed and aperture dials feature two icons, one on top and one below, which illustrate the effects that modifying those wheels one way or the other have on the final photo. The intention is to allow new users to move the dials in a more deliberate way, rather than changing all three randomly until they get the effect they want. The ISO dial doesn't feature these informational icons, as film photographers don't change ISOs between shots; the choice of roll locks you in to a particular ISO for the duration of the roll. 
 
 A final point on UI design choices: I considered letting the camera feed take up the whole screen, remaining visible behind the three wheels, but decided not to in the name of accessibility for users who might need high contrast visuals. 
 
