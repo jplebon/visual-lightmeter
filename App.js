@@ -4,15 +4,8 @@
  import {Platform, StyleSheet,Dimensions, Text,Button, View, Alert,Image} from 'react-native';
  import NativeCamera from './NativeCameraModule/NativeCameraModule'
 
-
  const screen = Dimensions.get("screen");
- const instructions = Platform.select({
-   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-   android:
-     'Double tap R on your keyboard to reload,\n' +
-     'Shake or press menu button for dev menu',
- });
- 
+
  type Props = {};
  export default class App extends Component<Props> {
  
@@ -43,10 +36,6 @@
  
  const styles = StyleSheet.create({
    container: {
-    //  flex: 1,
-    //  justifyContent: 'center',
-    //  alignItems: 'stretch',
-    //  backgroundColor: 'rgba(150, 150, 150, 0)',
     height: screen.height
    },
    welcome: {
@@ -121,7 +110,7 @@
     width: 40,
     height: 40,
     top: screen.height/1.59,
-    left: screen.width/5.2 //40 to account for horizontal padding
+    left: screen.width/5.2 
 
   },
 
@@ -130,7 +119,7 @@
     width: 40,
     height: 40,
     top: screen.height/1.15,
-    left: screen.width/2-20 - 40 //40 to account for horizontal padding
+    left: screen.width/2-20 - 40 
 
   },
 
