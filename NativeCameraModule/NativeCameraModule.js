@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Dimensions, requireNativeComponent, UIManager, findNodeHandle, } from 'react-native';
+import { StyleSheet, Dimensions, requireNativeComponent, NativeModules, UIManager, findNodeHandle, } from 'react-native';
 
 const screen = Dimensions.get("screen");
 const CameraView = requireNativeComponent('CameraModule')
@@ -11,23 +11,11 @@ export default class NativeCameraModule extends React.Component {
     }
 
     _onISOChange = (value) => {
-        if(this.camera){
-            UIManager.dispatchViewManagerCommand(
-                findNodeHandle(this.camera),
-                UIManager["CameraModule"].Commands.onISOChange(value),
-                []
-            );
-        }
+       NativeModules.CameraModuleManager.onISOChange(value);
     }
 
     _onShutterChange = (value) => {
-        if(this.camera){
-            UIManager.dispatchViewManagerCommand(
-                findNodeHandle(this.camera),
-                UIManager["CameraModule"].Commands.onShutterChange(value),
-                []
-            );
-        }
+        NativeModules.CameraModuleManager.onShutterChange(value);
     }
 
     render() {
