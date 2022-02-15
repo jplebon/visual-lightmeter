@@ -62,11 +62,11 @@ public class CameraModuleManager: RCTViewManager {
       return camerapreview
     }
   
-  @objc func onISOChange(_ node: NSNumber, value: Float) {
+  @objc func onISOChange(_ value: Float) {
     self.changeISO(value: value)
   }
   
-  @objc func onShutterChange(_ node: NSNumber, value: Int32) {
+  @objc func onShutterChange(_ value: Int32) {
     self.changeShutterSpeed(value: value)
   }
 
