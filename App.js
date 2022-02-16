@@ -140,15 +140,16 @@
   },
 
   scrollviewAperture: {
+    width: screen.width/3.18,
     right: 0,
     
-    width: screen.width/3.18,
   },
 
   scrollviewShutter: {
+    width: screen.width/3.18,
     right: 0,
     
-    width: screen.width/3.18,
+    
   }
 
  });
