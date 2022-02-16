@@ -1,8 +1,8 @@
  import { Picker } from '@react-native-picker/picker';
  import React, {Component, useState, useEffect} from 'react';
  import {StyleSheet, Dimensions, View} from 'react-native';
- import NativeCamera from './NativeCameraModule/NativeCameraModule'
-
+ import NativeCamera from './NativeCameraModule/NativeCameraModule';
+ import Icons from './icons';
 
  const screen = Dimensions.get("screen");
 
@@ -25,19 +25,22 @@
      return (
        <View style={styles.container}>
 
-          
-        <NativeCamera  
-          ref={e=>{this.camera = e}}
-          style={styles.camera} >  
-        </NativeCamera> 
-
+        
+          <NativeCamera  
+            ref={e=>{this.camera = e}}>  
+          </NativeCamera> 
+      
+  
+        
         <View style={styles.scrollviewGeneral}>
+
+          <Icons style={styles.icons}/>
+
           <Picker
             style={styles.pickers}
             selectedValue={ this.state.ISOValue }
             onValueChange={(itemValue, itemIndex) => {
               this.setState({ ISOValue: itemValue});
-              //calls native method
               this.camera._onISOChange(itemValue)}
           }>
             
@@ -105,9 +108,10 @@
             <Picker.Item label='1/1000' value={1000} color='white' />
             <Picker.Item label='1/2000' value={2000} color='white' />
           </Picker>   
-
+          
         </View>
-
+        
+        
        </View>
      );
    }
@@ -116,12 +120,6 @@
  const styles = StyleSheet.create({
    container: {
     height: screen.height
-   },
-
-   camera: {
-    height: screen.height,
-    width: screen.width,
-    backgroundColor: 'rgba(150, 150, 150, 0)',
    },
 
   scrollviewGeneral:{
@@ -136,8 +134,13 @@
 
   pickers:{
     width: screen.width/3.18,
-    right: 0
+    top: 100
   },
-  
+
+  icons:{
+    bottom: 0,
+    flex: 1
+  }
+
  });
  
