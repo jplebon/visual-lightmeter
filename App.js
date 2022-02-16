@@ -33,7 +33,7 @@
 
         <View style={styles.scrollviewGeneral}>
           <Picker
-            style={styles.scrollviewISO}
+            style={styles.pickers}
             selectedValue={ this.state.ISOValue }
             onValueChange={(itemValue, itemIndex) => {
               this.setState({ ISOValue: itemValue});
@@ -51,7 +51,7 @@
           </Picker>
 
           <Picker
-            style={styles.scrollviewAperture}
+            style={styles.pickers}
             selectedValue={ this.state.apertureValue}
             onValueChange={(itemValue, itemIndex) => {
               this.setState({ apertureValue: itemValue});
@@ -76,7 +76,7 @@
           </Picker>   
 
           <Picker
-            style={styles.scrollviewShutter}
+            style={styles.pickers}
             selectedValue={ this.state.shutterValue }
             onValueChange={(itemValue, itemIndex) => {
               this.setState({ shutterValue: itemValue});
@@ -134,23 +134,10 @@
 
   },
 
-  scrollviewISO:{
+  pickers:{
     width: screen.width/3.18,
     right: 0
   },
-
-  scrollviewAperture: {
-    width: screen.width/3.18,
-    right: 0,
-    
-  },
-
-  scrollviewShutter: {
-    width: screen.width/3.18,
-    right: 0,
-    
-    
-  }
-
+  
  });
  
